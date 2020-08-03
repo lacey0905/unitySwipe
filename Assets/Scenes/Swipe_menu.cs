@@ -46,7 +46,7 @@ public class Swipe_menu : MonoBehaviour
                 transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
                 for (int a = 0; a < pos.Length; a++)
                 {
-                    transform.GetChild(a).localScale = Vector2.Lerp(transform.GetChild(a).localScale, new Vector2(0.8f, 0.8f), 0.1f);
+                    transform.GetChild(a).localScale = Vector2.Lerp(transform.GetChild(a).localScale, new Vector2(0.6f, 0.6f), 0.1f);
                 }
             }
         }
