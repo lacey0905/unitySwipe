@@ -31,7 +31,7 @@ public class Swipe_menu : MonoBehaviour
         else
         {
             for (int i=0; i < pos.Length; i++)
-            {
+            {  
                 if(scroll_pos < pos[i] + (distance/2) && scroll_pos > pos[i] - (distance / 2))
                 {
                     scrollbar.GetComponent<Scrollbar>().value = Mathf.Lerp(scrollbar.GetComponent<Scrollbar>().value, pos[i], 0.1f);
@@ -44,11 +44,18 @@ public class Swipe_menu : MonoBehaviour
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
             {
                 transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
+                curSlide = i;
                 for (int a = 0; a < pos.Length; a++)
                 {
-                    transform.GetChild(a).localScale = Vector2.Lerp(transform.GetChild(a).localScale, new Vector2(0.6f, 0.6f), 0.1f);
+                    if(a != i)
+                    {
+                        transform.GetChild(a).localScale = Vector2.Lerp(transform.GetChild(a).localScale, new Vector2(0.8f, 0.8f), 0.1f);
+                    } 
                 }
             }
         }
     }
+
+    public int curSlide = 0;
+
 }
